@@ -1,5 +1,9 @@
+#include <assert.h>
+
 #include "test.h"
 #include "array.h"
+#include "objectidpool.h"
+
 
 void t0(void)
 {
@@ -19,4 +23,18 @@ void t0(void)
   {
     ArrayElement(&objectIds, s8, i) = 127;
   }
+}
+
+void oidtest(void)
+{
+  ObjectIdPool idpool;
+  ObjectIdPoolInit(&idpool);
+  
+  for(int i=0; i<33; ++i)
+  {
+    ObjectIdPoolAlloc(&idpool);
+  }
+  
+  ObjectIDPoolDealloc(&idpool, 13);
+  assert(ObjectIdPoolAlloc(&idpool) == 13);
 }
