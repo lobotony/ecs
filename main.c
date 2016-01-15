@@ -25,6 +25,7 @@ ObjectIdPool* ObjectIdPoolInit(ObjectIdPool* obj)
 // if no slot could be found, the pool size is increased
 
 typedef u16 ObjectId;
+typedef s8 ObjectIdStorageType;
 
 ObjectId ObjectIdPoolAlloc(ObjectIdPool* obj)
 {
@@ -32,7 +33,7 @@ ObjectId ObjectIdPoolAlloc(ObjectIdPool* obj)
   // try to find a free slot in the current pool
   for(int i=1; i<obj->objectIds.numElements; ++i)
   {
-    if(ArrayElement(&(obj->objectIds), ObjectId, i) == 0)
+    if(ArrayElement(&(obj->objectIds), ObjectIdStorageType, i) == 0)
     {
       result = i;
       break;
@@ -52,17 +53,23 @@ ObjectId ObjectIdPoolAlloc(ObjectIdPool* obj)
     result = (s32)oldNum;
   }
   assert(result != -1);
-  assert(ArrayElement(&(obj->objectIds), ObjectId, result) == 0);
+  assert(ArrayElement(&(obj->objectIds), ObjectIdStorageType, result) == 0);
 
-  printf("found iod at slot %d\n", result);
-  ArrayElement(&(obj->objectIds), ObjectId, result) = 1; // mark as "in use"
+  printf("found oid at slot %d\n", result);
+  ArrayElement(&(obj->objectIds), ObjectIdStorageType, result) = 1; // mark as "in use"
   
-  return (u16)result;
+  return (ObjectId)result;
+}
+
+void ObjectIDPoolDealloc(ObjectIdPool* obj, ObjectId oid)
+{
+  assert((oid > 0) && (oid < obj->objectIds.numElements));
+  ArrayElement(&(obj->objectIds), ObjectIdStorageType, oid) = 0;
 }
 
 typedef struct
 {
-  u16 objectId;
+  ObjectId objectId;
   // init func
   // ? deinit func
 } Component;
@@ -75,8 +82,11 @@ int main(int argc, const char * argv[])
   
   for(int i=0; i<33; ++i)
   {
-    printf("allocated %d\n", ObjectIdPoolAlloc(&idpool));
+    ObjectIdPoolAlloc(&idpool);
   }
+  
+  ObjectIDPoolDealloc(&idpool, 13);
+  assert(ObjectIdPoolAlloc(&idpool) == 13);
   
   
   return 0;
