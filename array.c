@@ -17,4 +17,5 @@ void ArrayDeinit(Array* array)
 void ArrayRealloc(Array* array, size_t newNum)
 {
   array->data = realloc(array->data, array->elementSize*newNum);
+  array->numElements = newNum;
 }

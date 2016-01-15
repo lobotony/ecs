@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EAB902611C4854B600A906AC /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB902601C4854B600A906AC /* main.c */; };
 		EAB902641C48631700A906AC /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB902621C48631700A906AC /* array.c */; };
+		EAB902671C49B60200A906AC /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB902651C49B60200A906AC /* test.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,10 @@
 		EAB902601C4854B600A906AC /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		EAB902621C48631700A906AC /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
 		EAB902631C48631700A906AC /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		EAB902651C49B60200A906AC /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+		EAB902661C49B60200A906AC /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		EAB902681C49B64800A906AC /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		EAB902691C49B6A200A906AC /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,10 @@
 		EAB9024D1C48549300A906AC = {
 			isa = PBXGroup;
 			children = (
+				EAB902691C49B6A200A906AC /* log.h */,
+				EAB902681C49B64800A906AC /* types.h */,
+				EAB902651C49B60200A906AC /* test.c */,
+				EAB902661C49B60200A906AC /* test.h */,
 				EAB902621C48631700A906AC /* array.c */,
 				EAB902631C48631700A906AC /* array.h */,
 				EAB902601C4854B600A906AC /* main.c */,
@@ -115,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB902671C49B60200A906AC /* test.c in Sources */,
 				EAB902611C4854B600A906AC /* main.c in Sources */,
 				EAB902641C48631700A906AC /* array.c in Sources */,
 			);
