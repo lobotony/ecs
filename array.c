@@ -1,4 +1,5 @@
 #include "array.h"
+#include <string.h>
 
 Array* ArrayInit(Array* array, size_t elementSize, size_t num)
 {
@@ -18,4 +19,9 @@ void ArrayRealloc(Array* array, size_t newNum)
 {
   array->data = realloc(array->data, array->elementSize*newNum);
   array->numElements = newNum;
+}
+
+void ArrayZero(Array* array)
+{
+  memset(array->data, 0, array->elementSize*array->numElements);
 }

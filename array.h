@@ -13,6 +13,7 @@ typedef struct
 Array* ArrayInit(Array* array, size_t elementSize, size_t num);
 void ArrayDeinit(Array* array);
 void ArrayRealloc(Array* array, size_t newNum);
+void ArrayZero(Array* array); // zeroes all bytes in this array
 
 #define ArrayElementPointer(arrayp, idx) ((arrayp)->data + idx*(arrayp)->elementSize)
 #define ArrayElement(arrayp, type, idx) ((type*)((arrayp)->data))[idx]
