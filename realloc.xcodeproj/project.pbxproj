@@ -13,6 +13,7 @@
 		EAB9026C1C49BD2A00A906AC /* objectidpool.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB9026A1C49BD2A00A906AC /* objectidpool.c */; };
 		EAB9026F1C4A9D9900A906AC /* componentpool.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB9026D1C4A9D9900A906AC /* componentpool.c */; };
 		EAB902721C4AA07B00A906AC /* stringhash.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB902701C4AA07B00A906AC /* stringhash.c */; };
+		EAB902751C4AA24000A906AC /* entitycomponentsystem.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB902731C4AA24000A906AC /* entitycomponentsystem.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,8 @@
 		EAB9026E1C4A9D9900A906AC /* componentpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = componentpool.h; sourceTree = "<group>"; };
 		EAB902701C4AA07B00A906AC /* stringhash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stringhash.c; sourceTree = "<group>"; };
 		EAB902711C4AA07B00A906AC /* stringhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringhash.h; sourceTree = "<group>"; };
+		EAB902731C4AA24000A906AC /* entitycomponentsystem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = entitycomponentsystem.c; sourceTree = "<group>"; };
+		EAB902741C4AA24000A906AC /* entitycomponentsystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entitycomponentsystem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		EAB9024D1C48549300A906AC = {
 			isa = PBXGroup;
 			children = (
+				EAB902731C4AA24000A906AC /* entitycomponentsystem.c */,
+				EAB902741C4AA24000A906AC /* entitycomponentsystem.h */,
 				EAB902701C4AA07B00A906AC /* stringhash.c */,
 				EAB902711C4AA07B00A906AC /* stringhash.h */,
 				EAB9026D1C4A9D9900A906AC /* componentpool.c */,
@@ -144,6 +149,7 @@
 				EAB9026C1C49BD2A00A906AC /* objectidpool.c in Sources */,
 				EAB902611C4854B600A906AC /* main.c in Sources */,
 				EAB902721C4AA07B00A906AC /* stringhash.c in Sources */,
+				EAB902751C4AA24000A906AC /* entitycomponentsystem.c in Sources */,
 				EAB902641C48631700A906AC /* array.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
