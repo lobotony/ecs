@@ -18,4 +18,4 @@ ObjectIdPool* ObjectIdPoolInit(ObjectIdPool* obj);
 // will NEVER return 0 as this is used to denote "no object"
 ObjectId ObjectIdPoolAlloc(ObjectIdPool* obj);
 
-void ObjectIDPoolDealloc(ObjectIdPool* obj, ObjectId oid);
+void ObjectIdPoolDealloc(ObjectIdPool* obj, ObjectId oid);

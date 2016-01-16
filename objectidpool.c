@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <assert.h>
 
+typedef uint64_t ObjectIdStorageType;
+
 ObjectIdPool* ObjectIdPoolInit(ObjectIdPool* obj)
 {
-  ArrayInit(&(obj->objectIds), sizeof(u16), 16);
+  ArrayInit(&(obj->objectIds), sizeof(ObjectIdStorageType), 16);
   memset(obj->objectIds.data, 0, obj->objectIds.elementSize*obj->objectIds.numElements);
   return obj;
 }
-
-typedef s8 ObjectIdStorageType;
 
 ObjectId ObjectIdPoolAlloc(ObjectIdPool* obj)
 {
@@ -46,7 +46,7 @@ ObjectId ObjectIdPoolAlloc(ObjectIdPool* obj)
   return (ObjectId)result;
 }
 
-void ObjectIDPoolDealloc(ObjectIdPool* obj, ObjectId oid)
+void ObjectIdPoolDealloc(ObjectIdPool* obj, ObjectId oid)
 {
   assert((oid > 0) && (oid < obj->objectIds.numElements));
   ArrayElement(&(obj->objectIds), ObjectIdStorageType, oid) = 0;
