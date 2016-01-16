@@ -3,9 +3,11 @@
 #include "test.h"
 #include "array.h"
 #include "objectidpool.h"
+#include "componentpool.h"
+#include "log.h"
+#include "string.h"
 
-
-void t0(void)
+void testArray0(void)
 {
   Array objectIds;
   size_t sz0 = 256;
@@ -25,7 +27,7 @@ void t0(void)
   }
 }
 
-void oidtest(void)
+void testObjectIdPool(void)
 {
   ObjectIdPool idpool;
   ObjectIdPoolInit(&idpool);
@@ -39,7 +41,7 @@ void oidtest(void)
   assert(ObjectIdPoolAlloc(&idpool) == 13);
 }
 
-void arraytest(void)
+void testArray1(void)
 {
   size_t arraySize = 13;
   Array s8array;
@@ -72,3 +74,48 @@ void arraytest(void)
 
 }
 
+
+// ----------------------------
+
+// payload for test transform component
+typedef struct
+{
+  f32 data[16];
+} Mat44;
+
+// test component: holds the transform of an object
+typedef struct
+{
+  Component base;
+  Mat44     transform;
+} TransformComponent;
+
+void TransformComponentInit(void* o)
+{
+  LOG("TransformComponentInit");
+  TransformComponent* obj = (TransformComponent*)o;
+  memset(&(obj->transform), 0, sizeof(Mat44));
+}
+
+void TransformComponentDeinit(void* o)
+{
+  LOG("TransformComponentDeinit");
+}
+
+void testComponentPool(void)
+{
+  ComponentPool transformComponentPool;
+  ComponentPoolInit(&transformComponentPool, sizeof(TransformComponent), TransformComponentInit, TransformComponentDeinit);
+ 
+  ObjectId oid = 13;
+  ComponentId c1 = ComponentPoolAlloc(&transformComponentPool, oid);
+  ComponentId c2 = ComponentPoolAlloc(&transformComponentPool, oid);
+ 
+  assert(c1 == 0);
+  assert(c2 == 1);
+  assert(transformComponentPool.components.numElements > 2);
+  
+  ComponentPoolDealloc(&transformComponentPool, c2);
+  c2 = ComponentPoolAlloc(&transformComponentPool, oid);
+  assert(c2 == 1);
+}

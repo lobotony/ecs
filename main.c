@@ -7,17 +7,14 @@
 #include "log.h"
 #include "objectidpool.h"
 #include "test.h"
+#include "componentpool.h"
 
-typedef struct
-{
-  ObjectId objectId;
-  // init func
-  // ? deinit func
-} Component;
 
 int main(int argc, const char * argv[])
 {
-  oidtest();
-  
+  testArray0();
+  testArray1();
+  testObjectIdPool();
+  testComponentPool();
   return 0;
 }

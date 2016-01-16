@@ -11,6 +11,7 @@
 		EAB902641C48631700A906AC /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB902621C48631700A906AC /* array.c */; };
 		EAB902671C49B60200A906AC /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB902651C49B60200A906AC /* test.c */; };
 		EAB9026C1C49BD2A00A906AC /* objectidpool.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB9026A1C49BD2A00A906AC /* objectidpool.c */; };
+		EAB9026F1C4A9D9900A906AC /* componentpool.c in Sources */ = {isa = PBXBuildFile; fileRef = EAB9026D1C4A9D9900A906AC /* componentpool.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,8 @@
 		EAB902691C49B6A200A906AC /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
 		EAB9026A1C49BD2A00A906AC /* objectidpool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = objectidpool.c; sourceTree = "<group>"; };
 		EAB9026B1C49BD2A00A906AC /* objectidpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objectidpool.h; sourceTree = "<group>"; };
+		EAB9026D1C4A9D9900A906AC /* componentpool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = componentpool.c; sourceTree = "<group>"; };
+		EAB9026E1C4A9D9900A906AC /* componentpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = componentpool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,8 @@
 		EAB9024D1C48549300A906AC = {
 			isa = PBXGroup;
 			children = (
+				EAB9026D1C4A9D9900A906AC /* componentpool.c */,
+				EAB9026E1C4A9D9900A906AC /* componentpool.h */,
 				EAB9026A1C49BD2A00A906AC /* objectidpool.c */,
 				EAB9026B1C49BD2A00A906AC /* objectidpool.h */,
 				EAB902691C49B6A200A906AC /* log.h */,
@@ -129,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB9026F1C4A9D9900A906AC /* componentpool.c in Sources */,
 				EAB902671C49B60200A906AC /* test.c in Sources */,
 				EAB9026C1C49BD2A00A906AC /* objectidpool.c in Sources */,
 				EAB902611C4854B600A906AC /* main.c in Sources */,

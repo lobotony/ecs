@@ -2,8 +2,6 @@
 
 #include "array.h"
 
-typedef u16 ObjectId;
-
 typedef struct
 {
   Array objectIds;

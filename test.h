@@ -1,5 +1,6 @@
 #pragma once
 
-void t0(void);
-void oidtest(void);
-void arraytest(void);
+void testArray0(void);
+void testObjectIdPool(void);
+void testArray1(void);
+void testComponentPool(void);
