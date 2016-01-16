@@ -35,6 +35,40 @@ void oidtest(void)
     ObjectIdPoolAlloc(&idpool);
   }
   
-  ObjectIDPoolDealloc(&idpool, 13);
+  ObjectIdPoolDealloc(&idpool, 13);
   assert(ObjectIdPoolAlloc(&idpool) == 13);
 }
+
+void arraytest(void)
+{
+  size_t arraySize = 13;
+  Array s8array;
+  ArrayInit(&s8array, sizeof(s8), arraySize);
+  
+  for(int i=0; i<arraySize; ++i)
+  {
+    ArrayElement(&s8array, s8, i) = i;
+  
+    void* p0 = &(((s8*)((&s8array)->data))[i]);
+    void* p1 = ArrayElementPointer(&s8array, i);
+    assert(p0 == p1);
+    
+    assert(*((s8*)p0) == *((s8*)p1));
+  }
+  
+  Array u64array;
+  ArrayInit(&u64array, sizeof(u64), arraySize);
+
+  for(int i=0; i<arraySize; ++i)
+  {
+    ArrayElement(&u64array, u64, i) = i;
+
+    void* p0 = &(((u64*)((&u64array)->data))[i]);
+    void* p1 = ArrayElementPointer(&u64array, i);
+    assert(p0 == p1);
+
+    assert(*((u64*)p0) == *((u64*)p1));
+  }
+
+}
+
