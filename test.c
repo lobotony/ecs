@@ -6,6 +6,7 @@
 #include "componentpool.h"
 #include "log.h"
 #include "string.h"
+#include "entitycomponentsystem.h"
 
 void testArray0(void)
 {
@@ -118,4 +119,30 @@ void testComponentPool(void)
   ComponentPoolDealloc(&transformComponentPool, c2);
   c2 = ComponentPoolAlloc(&transformComponentPool, oid);
   assert(c2 == 1);
+}
+
+typedef struct
+{
+  Component base;
+  s32 health;
+} HealthComponent;
+
+void testecs(void)
+{
+  EntityComponentSystem ecs;
+  ECSInit(&ecs);
+
+  u32 transformCompId = ComponentHash(TransformComponent);
+  u32 healthCompId = ComponentHash(HealthComponent);
+  
+  ECSComponentRegister(&ecs, transformCompId, sizeof(TransformComponent), TransformComponentInit, TransformComponentDeinit);
+  ECSComponentRegister(&ecs, healthCompId, sizeof(HealthComponent), NULL, NULL);
+  
+  ObjectId o0 = ECSObjectAlloc(&ecs);
+  ObjectId o1 = ECSObjectAlloc(&ecs);
+  
+  ECSComponentAlloc(&ecs, o0, transformCompId);
+  ECSComponentAlloc(&ecs, o0, healthCompId);
+
+  ECSComponentAlloc(&ecs, o1, transformCompId);
 }
