@@ -29,7 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EAB902561C48549300A906AC /* realloc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = realloc; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAB902561C48549300A906AC /* ecs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ecs; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB902601C4854B600A906AC /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		EAB902621C48631700A906AC /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
 		EAB902631C48631700A906AC /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		EAB902571C48549300A906AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EAB902561C48549300A906AC /* realloc */,
+				EAB902561C48549300A906AC /* ecs */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,9 +91,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EAB902551C48549300A906AC /* realloc */ = {
+		EAB902551C48549300A906AC /* ecs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAB9025D1C48549300A906AC /* Build configuration list for PBXNativeTarget "realloc" */;
+			buildConfigurationList = EAB9025D1C48549300A906AC /* Build configuration list for PBXNativeTarget "ecs" */;
 			buildPhases = (
 				EAB902521C48549300A906AC /* Sources */,
 				EAB902531C48549300A906AC /* Frameworks */,
@@ -103,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = realloc;
+			name = ecs;
 			productName = realloc;
-			productReference = EAB902561C48549300A906AC /* realloc */;
+			productReference = EAB902561C48549300A906AC /* ecs */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -122,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EAB902511C48549300A906AC /* Build configuration list for PBXProject "realloc" */;
+			buildConfigurationList = EAB902511C48549300A906AC /* Build configuration list for PBXProject "ecs" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -134,7 +134,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EAB902551C48549300A906AC /* realloc */,
+				EAB902551C48549300A906AC /* ecs */,
 			);
 		};
 /* End PBXProject section */
@@ -253,7 +253,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EAB902511C48549300A906AC /* Build configuration list for PBXProject "realloc" */ = {
+		EAB902511C48549300A906AC /* Build configuration list for PBXProject "ecs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAB9025B1C48549300A906AC /* Debug */,
@@ -262,13 +262,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAB9025D1C48549300A906AC /* Build configuration list for PBXNativeTarget "realloc" */ = {
+		EAB9025D1C48549300A906AC /* Build configuration list for PBXNativeTarget "ecs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAB9025E1C48549300A906AC /* Debug */,
 				EAB9025F1C48549300A906AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
